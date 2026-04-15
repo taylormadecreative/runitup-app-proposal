@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <meta name="theme-color" content="#0A0A0A" />
-<title>Run It UP! Dallas — The Community Operating System</title>
-<meta name="description" content="Custom proposal for Theo Murdaugh and the Run It UP! Dallas team. We turned 7 fragmented tools into one community platform — live in the App Store right now." />
+<title>Run It UP! Dallas — One App for the Whole Crew</title>
+<meta name="description" content="Custom proposal for Theo Murdaugh and the Run It UP! Dallas team. We turned 7 fragmented tools into one app for the whole crew — live in the App Store right now." />
 <link rel="icon" type="image/png" href="assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,9 +23,9 @@
   <div class="nav__inner">
     <a href="#top" class="nav__logo">
       <img src="assets/logo.png" alt="Run It UP! Dallas" />
-      <span>RIU · TAYLORMADE</span>
+      <span>RUN IT UP! DALLAS</span>
     </a>
-    <a href="#next-steps" class="nav__cta magnetic">Book 30 Min</a>
+    <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener" class="nav__cta magnetic">Book 30 Min</a>
   </div>
 </header>
 
@@ -59,7 +59,7 @@
 
       <div class="hero__cta-row">
         <a href="#reality" class="btn btn--ghost magnetic">See the Build</a>
-        <a href="#next-steps" class="btn btn--lime magnetic">Book 30 Minutes</a>
+        <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener" class="btn btn--lime magnetic">Book 30 Minutes</a>
         <a href="https://apps.apple.com/us/app/run-it-up-dallas/id6748879842" target="_blank" rel="noopener" class="btn btn--appstore magnetic" id="appStoreBtn">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.05 12.04c-.02-2.2 1.8-3.27 1.88-3.32-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.6 2.18-1.55 2.69-.4 6.67 1.1 8.85.74 1.07 1.61 2.27 2.75 2.23 1.1-.04 1.52-.71 2.86-.71s1.71.71 2.88.69c1.19-.02 1.94-1.09 2.67-2.17.84-1.24 1.18-2.44 1.2-2.5-.03-.01-2.3-.88-2.33-3.56zM14.81 5.5c.6-.73 1.01-1.75.9-2.77-.87.04-1.93.58-2.56 1.31-.56.64-1.06 1.68-.93 2.68.98.07 1.98-.5 2.59-1.22z"/></svg>
           <span>Download on App Store</span>
@@ -112,7 +112,7 @@
               <div class="lp-stat"><div class="lp-num lime" id="lpPace">0:00</div><div class="lp-unit">PACE</div></div>
               <div class="lp-stat"><div class="lp-num" id="lpTime">0:00</div><div class="lp-unit">TIME</div></div>
             </div>
-            <div class="lp-btn red-bg">END RUN</div>
+            <div class="lp-btn lp-btn--end">END RUN</div>
           </div>
 
           <!-- Screen 3 : CHAT -->
@@ -195,104 +195,38 @@
         AND THEO'S PERSONAL PHONE.
       </h2>
       <p class="section__lead">
-        You're running a 2025 Fitness Org of the Year on 2015 infrastructure. Drag the sliders — this
-        is what the fragmentation is actually costing the crew.
+        You're running a 2025 Fitness Org of the Year on 2015 infrastructure. Seven separate tools, every
+        one of them leaking data, time, or money. Here's what we pull into a single home base.
       </p>
     </div>
 
-    <!-- Interactive tool calculator -->
-    <div class="tool-calc reveal" id="toolCalc">
-      <div class="tc-grid">
-        <!-- card -->
-        <div class="tc-card" data-tool="linktree">
-          <div class="tc-head"><div class="tc-tag">LINKTREE</div><div class="tc-cost" data-cost>$12/mo</div></div>
-          <h4>The Bio Link Black Box</h4>
-          <p>81,000 followers click. Zero data on who, when, or what they wanted next.</p>
-          <div class="tc-slider-wrap">
-            <label>Plan cost: <span data-val>$12</span>/mo</label>
-            <input type="range" min="5" max="24" value="12" step="1" class="tc-slider" data-unit="$/mo" data-key="linktree" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="forms">
-          <div class="tc-head"><div class="tc-tag">GOOGLE FORMS</div><div class="tc-cost" data-cost>6 hrs/mo</div></div>
-          <h4>RSVPs That Vanish</h4>
-          <p>Every run collects names — then deletes the relationship. Zero record of who showed up.</p>
-          <div class="tc-slider-wrap">
-            <label>Events managed: <span data-val>8</span>/mo</label>
-            <input type="range" min="2" max="20" value="8" step="1" class="tc-slider" data-unit="events" data-key="forms" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="eventbrite">
-          <div class="tc-head"><div class="tc-tag">EVENTBRITE</div><div class="tc-cost" data-cost>$—/mo</div></div>
-          <h4>3.7% + $1.79 Per Ticket</h4>
-          <p>Every ticketed event bleeds 5–8% of gross to a platform that doesn't know the crew.</p>
-          <div class="tc-slider-wrap">
-            <label>Tickets sold: <span data-val>150</span>/mo @ $25</label>
-            <input type="range" min="0" max="500" value="150" step="10" class="tc-slider" data-unit="tickets" data-key="eventbrite" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="dms">
-          <div class="tc-head"><div class="tc-tag">INSTAGRAM DM</div><div class="tc-cost" data-cost>— hrs/mo</div></div>
-          <h4>Theo's Personal Inbox</h4>
-          <p>Member questions, run buddy intros, brand asks — routed through one phone at 11pm.</p>
-          <div class="tc-slider-wrap">
-            <label>DMs handled: <span data-val>200</span>/mo</label>
-            <input type="range" min="50" max="600" value="200" step="10" class="tc-slider" data-unit="dms" data-key="dms" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="groupme">
-          <div class="tc-head"><div class="tc-tag">GROUPME / IG CHATS</div><div class="tc-cost" data-cost>12 channels</div></div>
-          <h4>12 Channels, Zero Moderation</h4>
-          <p>No search, no archive, no blocks, no admin view. Onboarding = adding to a dozen threads.</p>
-          <div class="tc-slider-wrap">
-            <label>Active group chats: <span data-val>12</span></label>
-            <input type="range" min="3" max="20" value="12" step="1" class="tc-slider" data-unit="chats" data-key="groupme" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="merch">
-          <div class="tc-head"><div class="tc-tag">BAG SALES AT THE RUN</div><div class="tc-cost" data-cost>$—/mo lost</div></div>
-          <h4>Present-Only Revenue</h4>
-          <p>Gear moves hand-to-hand from a bag at the run. Reaches maybe 200. The 81,800 followers who didn't show — locked out.</p>
-          <div class="tc-slider-wrap">
-            <label>Members reached online: <span data-val>0</span>/mo</label>
-            <input type="range" min="0" max="2000" value="0" step="50" class="tc-slider" data-unit="members" data-key="merch" />
-          </div>
-        </div>
-
-        <div class="tc-card" data-tool="reports">
-          <div class="tc-head"><div class="tc-tag">SCREENSHOT REPORTS</div><div class="tc-cost" data-cost>— hrs/qtr</div></div>
-          <h4>Manual Sponsor Decks</h4>
-          <p>Propel. ASICS. Champs. Screenshots, hand-typed numbers. The data they want lives nowhere.</p>
-          <div class="tc-slider-wrap">
-            <label>Sponsor reports: <span data-val>4</span>/qtr</label>
-            <input type="range" min="1" max="12" value="4" step="1" class="tc-slider" data-unit="reports" data-key="reports" />
-          </div>
+    <!-- STATIC CONSOLIDATION VISUAL -->
+    <div class="consolidate reveal">
+      <div class="consolidate__left">
+        <div class="consolidate__label">7 TOOLS, 1 ORG, EVERY DAY</div>
+        <div class="consolidate__list">
+          <div class="ctool"><div class="ctool__name">Google Forms</div><div class="ctool__pain">RSVPs that vanish — no record of who showed up.</div></div>
+          <div class="ctool"><div class="ctool__name">Linktree</div><div class="ctool__pain">81K followers click. Zero data on who or why.</div></div>
+          <div class="ctool"><div class="ctool__name">Instagram DMs</div><div class="ctool__pain">Every member question routes through Theo's phone at 11pm.</div></div>
+          <div class="ctool"><div class="ctool__name">Eventbrite</div><div class="ctool__pain">3.7% + $1.79 per ticket bleeding to a platform that doesn't know the crew.</div></div>
+          <div class="ctool"><div class="ctool__name">GroupMe / IG Chats</div><div class="ctool__pain">12 channels. No search, no archive, no moderation.</div></div>
+          <div class="ctool"><div class="ctool__name">Bag Sales at the Run</div><div class="ctool__pain">Gear only moves hand-to-hand. 81,700 followers locked out.</div></div>
+          <div class="ctool"><div class="ctool__name">Manual Sponsor Reports</div><div class="ctool__pain">Screenshots + hand-typed numbers. The data brands want lives nowhere.</div></div>
         </div>
       </div>
-
-      <div class="tc-totals">
-        <div class="tc-total">
-          <div class="tc-total__label">MONTHLY SAAS SPEND</div>
-          <div class="tc-total__num"><span class="lime">$</span><span id="tcMoneyOut">0</span></div>
-          <div class="tc-total__sub">We consolidate all of it.</div>
-        </div>
-        <div class="tc-total">
-          <div class="tc-total__label">HOURS / MONTH GIVEN BACK</div>
-          <div class="tc-total__num"><span id="tcHoursOut">0</span><span class="lime"> hrs</span></div>
-          <div class="tc-total__sub">Theo clocks out.</div>
-        </div>
-        <div class="tc-total">
-          <div class="tc-total__label">REVENUE LEFT ON THE TABLE</div>
-          <div class="tc-total__num"><span class="lime">$</span><span id="tcLostOut">0</span></div>
-          <div class="tc-total__sub">Tickets fees + offline-only merch.</div>
+      <div class="consolidate__arrow" aria-hidden="true">→</div>
+      <div class="consolidate__right">
+        <div class="consolidate__label lime">ONE PLATFORM</div>
+        <div class="consolidate__card">
+          <div class="consolidate__title">RUN IT UP! APP</div>
+          <p>All runs, all channels, all events, all gear, all sponsors, all data.</p>
+          <p>One login. One home base. One source of truth.</p>
+          <p class="lime">Live in the App Store right now.</p>
         </div>
       </div>
     </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
   </div>
 </section>
 
@@ -303,7 +237,7 @@
       <div class="kicker lime">02 · THE PLATFORM</div>
       <h2 class="section__title">
         WE CONSOLIDATED ALL OF IT INTO
-        <span class="lime">ONE COMMUNITY OPERATING SYSTEM.</span>
+        <span class="lime">ONE APP FOR THE WHOLE CREW.</span>
         IT'S LIVE IN THE APP STORE RIGHT NOW.
       </h2>
     </div>
@@ -334,7 +268,7 @@
         <div class="feature-group__list">
           <div class="feat"><h4>Share-to-Stories Cards</h4><p>Every check-in, every milestone, every streak — generates a branded IG Story card in one tap.</p></div>
           <div class="feat"><h4>Crew Invite Links</h4><p>Referral tracking on every invite. Know exactly who brings who.</p></div>
-          <div class="feat"><h4>Welcome Onboarding</h4><p>Every new runner becomes a real CRM record — name, neighborhood, goals, pace.</p></div>
+          <div class="feat"><h4>Welcome Onboarding</h4><p>Every new runner becomes a real member profile — name, neighborhood, goals, pace.</p></div>
         </div>
       </div>
     </div>
@@ -349,15 +283,15 @@
         </div>
       </div>
 
-      <div class="admin__tabs" role="tablist">
-        <button class="admin__tab is-active" data-tab="overview">Overview</button>
-        <button class="admin__tab" data-tab="members">Members</button>
-        <button class="admin__tab" data-tab="events">Events</button>
-        <button class="admin__tab" data-tab="channels">Channels</button>
-        <button class="admin__tab" data-tab="sponsors">Sponsors</button>
+      <div class="admin__tabs" role="tablist" aria-label="Admin dashboard">
+        <button class="admin__tab is-active" role="tab" id="admintab-overview" aria-selected="true" aria-controls="adminpanel-overview" data-tab="overview">Overview</button>
+        <button class="admin__tab" role="tab" id="admintab-members" aria-selected="false" aria-controls="adminpanel-members" tabindex="-1" data-tab="members">Members</button>
+        <button class="admin__tab" role="tab" id="admintab-events" aria-selected="false" aria-controls="adminpanel-events" tabindex="-1" data-tab="events">Events</button>
+        <button class="admin__tab" role="tab" id="admintab-channels" aria-selected="false" aria-controls="adminpanel-channels" tabindex="-1" data-tab="channels">Channels</button>
+        <button class="admin__tab" role="tab" id="admintab-sponsors" aria-selected="false" aria-controls="adminpanel-sponsors" tabindex="-1" data-tab="sponsors">Sponsors</button>
       </div>
 
-      <div class="admin__panel is-active" data-panel="overview">
+      <div class="admin__panel is-active" role="tabpanel" id="adminpanel-overview" aria-labelledby="admintab-overview" data-panel="overview">
         <div class="admin__metrics">
           <div class="ametric"><div class="ametric__label">Active this week</div><div class="ametric__num" data-count="247">0</div></div>
           <div class="ametric"><div class="ametric__label">Check-in rate</div><div class="ametric__num" data-count="78" data-suffix="%">0</div></div>
@@ -371,7 +305,7 @@
         </div>
       </div>
 
-      <div class="admin__panel" data-panel="members">
+      <div class="admin__panel" role="tabpanel" id="adminpanel-members" aria-labelledby="admintab-members" data-panel="members">
         <table class="admin__table">
           <thead><tr><th>Name</th><th>Neighborhood</th><th>Streak</th><th>Last Run</th></tr></thead>
           <tbody>
@@ -384,7 +318,7 @@
         </table>
       </div>
 
-      <div class="admin__panel" data-panel="events">
+      <div class="admin__panel" role="tabpanel" id="adminpanel-events" aria-labelledby="admintab-events" data-panel="events">
         <div class="admin__events">
           <div class="ae"><div class="ae__date">SAT APR 18</div><div class="ae__title">Katy Trail · 3.2mi</div><div class="ae__rsvp">RSVP <b>214</b></div></div>
           <div class="ae"><div class="ae__date">WED APR 22</div><div class="ae__title">Speed Session · Fair Park</div><div class="ae__rsvp">RSVP <b>86</b></div></div>
@@ -392,7 +326,7 @@
         </div>
       </div>
 
-      <div class="admin__panel" data-panel="channels">
+      <div class="admin__panel" role="tabpanel" id="adminpanel-channels" aria-labelledby="admintab-channels" data-panel="channels">
         <div class="admin__channels">
           <div class="ac">#south-dallas <span>812 · 47 today</span></div>
           <div class="ac">#oak-cliff <span>604 · 28 today</span></div>
@@ -402,7 +336,7 @@
         </div>
       </div>
 
-      <div class="admin__panel" data-panel="sponsors">
+      <div class="admin__panel" role="tabpanel" id="adminpanel-sponsors" aria-labelledby="admintab-sponsors" data-panel="sponsors">
         <div class="admin__sponsor-note">ILLUSTRATIVE SPONSOR INVENTORY — example rates Run It UP could charge brand partners through the platform. Not Taylormade Creative pricing.</div>
         <div class="admin__sponsors">
           <div class="as"><div>Propel</div><div>Channel · 90 days</div><div class="lime">$8,500</div></div>
@@ -417,6 +351,8 @@
       Your <span class="lime">82,000 IG followers</span> stop being passive watchers and start becoming members —
       with a profile, a streak, and a reason to show up Saturday. The gap between 82K watching and 300 running is the growth story.
     </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
   </div>
 </section>
 
@@ -456,11 +392,57 @@
         <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>New runner = profile, streak, a way to bring them back.</p></div>
       </div>
       <div class="ba-row">
-        <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>6 SaaS tools. 6 logins. 6 invoices.</p></div>
+        <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>6 tools. 6 logins. 6 monthly software bills.</p></div>
         <div class="ba__arrow">→</div>
         <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>One platform. One login. One organization.</p></div>
       </div>
     </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
+  </div>
+</section>
+
+<!-- SECTION 4.5 — COMPETITION COMPARISON -->
+<section id="compare" class="section section--dark">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="kicker">03.5 · THE COMPARISON</div>
+      <h2 class="section__title">WHY NOT JUST USE <span class="lime">SOMETHING ELSE?</span></h2>
+      <p class="section__lead">
+        Every board should ask this. Here's the honest read — side by side, no spin.
+      </p>
+    </div>
+
+    <div class="compare reveal">
+      <div class="compare__scroll">
+        <table class="compare__table">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="compare__us">RIU App</th>
+              <th>Strava Club</th>
+              <th>Geneva / Circle</th>
+              <th>Build in-house</th>
+              <th>Do nothing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Custom branded to Run It UP!</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">✗ Strava's brand</span></td><td><span class="x">✗ generic</span></td><td><span class="check">✓</span></td><td class="muted">N/A</td></tr>
+            <tr><td>Check-ins, streaks, badges</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">partial</span></td><td><span class="x">✗</span></td><td><span class="check">✓ if built</span></td><td><span class="x">✗</span></td></tr>
+            <tr><td>Run buddy matching with consent</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">✗</span></td><td><span class="x">✗</span></td><td><span class="check">✓ if built</span></td><td><span class="x">✗</span></td></tr>
+            <tr><td>12 community channels in-app</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">✗</span></td><td><span class="check">✓</span></td><td><span class="check">✓ if built</span></td><td><span class="x">✗</span></td></tr>
+            <tr><td>Sponsor placements built-in</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">✗</span></td><td><span class="x">✗</span></td><td><span class="check">✓ if built</span></td><td><span class="x">✗</span></td></tr>
+            <tr><td>In-app merch store</td><td class="compare__us">Phase 2</td><td><span class="x">✗</span></td><td><span class="x">✗</span></td><td>Phase 2 if built</td><td><span class="x">✗</span></td></tr>
+            <tr><td>Member data owned by Run It UP!</td><td class="compare__us"><span class="check">✓</span></td><td><span class="x">✗ Strava owns</span></td><td><span class="x">✗ Circle owns</span></td><td><span class="check">✓</span></td><td class="muted">N/A</td></tr>
+            <tr><td>Cost</td><td class="compare__us">Low fixed + maintenance</td><td>Strava charges members</td><td>$99–$499/mo per community</td><td>$150K+ to build</td><td>Leaking to Google Forms / Linktree / IG DMs every week</td></tr>
+            <tr><td>Time to launch</td><td class="compare__us"><b class="lime">Already live</b></td><td>—</td><td>Days</td><td>6+ months</td><td>Forever</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare__close">The app is already built. The comparison is between <span class="lime">shipping Monday</span> and starting from zero.</p>
+    </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
   </div>
 </section>
 
@@ -638,15 +620,15 @@
 
         <!-- INTERACTIVE SPONSOR INVENTORY -->
         <div class="si" id="si">
-          <div class="si__tabs">
-            <button class="si__tab is-active" data-si="channel">Sponsored Channel</button>
-            <button class="si__tab" data-si="run">Sponsored Run</button>
-            <button class="si__tab" data-si="badge">Sponsored Badge</button>
-            <button class="si__tab" data-si="push">Welcome Push</button>
+          <div class="si__tabs" role="tablist" aria-label="Sponsor placements">
+            <button class="si__tab is-active" role="tab" id="sitab-channel" aria-selected="true" aria-controls="sipanel-channel" data-si="channel">Sponsored Channel</button>
+            <button class="si__tab" role="tab" id="sitab-run" aria-selected="false" aria-controls="sipanel-run" tabindex="-1" data-si="run">Sponsored Run</button>
+            <button class="si__tab" role="tab" id="sitab-badge" aria-selected="false" aria-controls="sipanel-badge" tabindex="-1" data-si="badge">Sponsored Badge</button>
+            <button class="si__tab" role="tab" id="sitab-push" aria-selected="false" aria-controls="sipanel-push" tabindex="-1" data-si="push">Welcome Push</button>
           </div>
           <div class="si__stage">
             <!-- channel -->
-            <div class="si__demo is-active" data-demo="channel">
+            <div class="si__demo is-active" role="tabpanel" id="sipanel-channel" aria-labelledby="sitab-channel" data-demo="channel">
               <div class="si-phone">
                 <div class="si-head"><span class="lime">#propel-hydration-tips</span><span class="si-spon">SPONSORED · 90 DAYS</span></div>
                 <div class="si-msg"><b>Propel</b><p>Pre-run hydration: 16oz water + electrolytes 30 min before. Drop questions below.</p></div>
@@ -656,7 +638,7 @@
               <p class="si__caption">Propel <b>owns</b> a channel for 90 days. The conversation lives there. IG posts die in 24 hours.</p>
             </div>
             <!-- run -->
-            <div class="si__demo" data-demo="run">
+            <div class="si__demo" role="tabpanel" id="sipanel-run" aria-labelledby="sitab-run" data-demo="run">
               <div class="si-phone">
                 <div class="si-run-card">
                   <div class="si-run-tag">PRESENTED BY <span class="lime">ASICS</span></div>
@@ -669,7 +651,7 @@
               <p class="si__caption">Every RSVP, every check-in, every photo — tagged to ASICS. Auto-rolled into the monthly report.</p>
             </div>
             <!-- badge -->
-            <div class="si__demo" data-demo="badge">
+            <div class="si__demo" role="tabpanel" id="sipanel-badge" aria-labelledby="sitab-badge" data-demo="badge">
               <div class="si-phone">
                 <div class="si-badge-unlock">
                   <div class="si-badge-halo"></div>
@@ -682,7 +664,7 @@
               <p class="si__caption">Status + status-based offer. Members unlock this by running, not by clicking an ad.</p>
             </div>
             <!-- push -->
-            <div class="si__demo" data-demo="push">
+            <div class="si__demo" role="tabpanel" id="sipanel-push" aria-labelledby="sitab-push" data-demo="push">
               <div class="si-phone">
                 <div class="si-push">
                   <div class="si-push-top"><span>RIU DALLAS</span><span class="si-push-now">now</span></div>
@@ -754,6 +736,8 @@
         </ul>
       </div>
     </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
   </div>
 </section>
 
@@ -780,6 +764,48 @@
   </div>
 </section>
 
+<!-- SECTION 6.5 — FOR THE BOARD -->
+<section id="board" class="section section--board">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="kicker lime">05.5 · FOR THE BOARD</div>
+      <h2 class="section__title">A BOARD-READY <span class="lime">ONE-PAGER.</span></h2>
+      <p class="section__lead">
+        Forward this section directly — every question a treasurer or board member will raise, answered.
+      </p>
+    </div>
+
+    <div class="board-grid reveal">
+      <div class="board-card">
+        <div class="board-card__q">Who owns the app?</div>
+        <p>Run It UP! owns the brand, the member data, and the App Store listing's public identity. Taylormade Creative owns the codebase and continues maintaining it under license.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-card__q">Who owns the data?</div>
+        <p>Run It UP! — 100%. Every member record, every check-in, every DM. Exportable anytime. Data never leaves the org's Supabase account.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-card__q">What if we end the relationship?</div>
+        <p>90-day transition window. Full data export (CSV + JSON). We help you stand up your next vendor or archive gracefully.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-card__q">How is member privacy handled?</div>
+        <p>Row-level security at the database layer. Members can only see their own data. Blocked/reported users isolated. Apple/Google Sign-In means no password storage.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-card__q">What's the total cost?</div>
+        <p>One-time setup + monthly maintenance. We walk through the numbers live — structured so it's predictable, budget-friendly for a 501(c)(3), and scales with actual usage.</p>
+      </div>
+      <div class="board-card">
+        <div class="board-card__q">What happens if Taylormade Creative disappears?</div>
+        <p>Source code held in escrow + full credential handoff on request. The app doesn't stop working. You hire another iOS dev and they pick up from there.</p>
+      </div>
+    </div>
+
+    <div class="inline-cta reveal">Ready when you are. <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener">Book the 30-min call →</a></div>
+  </div>
+</section>
+
 <!-- SECTION 7 — NEXT STEPS -->
 <section id="next-steps" class="section section--next">
   <div class="container">
@@ -800,7 +826,7 @@
         <div class="step__num">02</div>
         <div class="step__body">
           <h3>Onboarding</h3>
-          <p>License the app. Transfer the App Store listing to Run It UP!'s organization account. Brand customization. Admin training for the team.</p>
+          <p>Run It UP! gets the branded app under the org's account — listed as "Run It UP! Dallas" with the org's name as publisher. Taylormade Creative retains the codebase and continues hosting + maintaining the backend under annual license. Run It UP! owns the brand, the member data, the content, and the listing's public identity. We keep the app running — you keep the community running.</p>
         </div>
       </div>
       <div class="step reveal">
@@ -813,11 +839,11 @@
     </div>
 
     <div class="cta-wrap reveal">
-      <a href="mailto:taylormademd@gmail.com?subject=Run%20It%20UP!%20Dallas%20App%20-%20call" class="cta-big magnetic">
-        REPLY TO BOOK 30 MINUTES
+      <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener" class="cta-big magnetic">
+        BOOK 30 MIN → CALENDLY
         <span class="cta-arrow">→</span>
       </a>
-      <p class="cta-sub">taylormademd@gmail.com · (817) 707-1291</p>
+      <p class="cta-sub">or <a href="mailto:taylormademd@gmail.com?subject=Run%20It%20UP!%20Dallas%20App%20-%20call" class="cta-sub-link">reply to this message</a> · taylormademd@gmail.com · (817) 707-1291</p>
 
       <a href="https://apps.apple.com/us/app/run-it-up-dallas/id6748879842" target="_blank" rel="noopener" class="appstore-badge magnetic">
         <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor"><path d="M17.05 12.04c-.02-2.2 1.8-3.27 1.88-3.32-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.6 2.18-1.55 2.69-.4 6.67 1.1 8.85.74 1.07 1.61 2.27 2.75 2.23 1.1-.04 1.52-.71 2.86-.71s1.71.71 2.88.69c1.19-.02 1.94-1.09 2.67-2.17.84-1.24 1.18-2.44 1.2-2.5-.03-.01-2.3-.88-2.33-3.56zM14.81 5.5c.6-.73 1.01-1.75.9-2.77-.87.04-1.93.58-2.56 1.31-.56.64-1.06 1.68-.93 2.68.98.07 1.98-.5 2.59-1.22z"/></svg>
@@ -868,6 +894,12 @@
     </div>
   </div>
 </footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta" aria-hidden="false">
+  <a href="https://calendly.com/taylormademd" target="_blank" rel="noopener" class="mobile-cta__btn mobile-cta__btn--lime">BOOK 30 MIN</a>
+  <a href="https://apps.apple.com/us/app/run-it-up-dallas/id6748879842" target="_blank" rel="noopener" class="mobile-cta__btn mobile-cta__btn--ghost">TRY THE APP</a>
+</div>
 
 <script src="script.js"></script>
 </body>

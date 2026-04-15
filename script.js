@@ -550,7 +550,12 @@
     tabs.forEach(function(t){
       t.addEventListener('click', function(){
         var key = t.getAttribute('data-si');
-        tabs.forEach(function(x){ x.classList.toggle('is-active', x === t); });
+        tabs.forEach(function(x){
+          var active = x === t;
+          x.classList.toggle('is-active', active);
+          x.setAttribute('aria-selected', active ? 'true' : 'false');
+          if (active) { x.removeAttribute('tabindex'); } else { x.setAttribute('tabindex','-1'); }
+        });
         demos.forEach(function(d){ d.classList.toggle('is-active', d.getAttribute('data-demo') === key); });
       });
     });
@@ -634,7 +639,12 @@
     tabs.forEach(function(t){
       t.addEventListener('click', function(){
         var key = t.getAttribute('data-tab');
-        tabs.forEach(function(x){ x.classList.toggle('is-active', x === t); });
+        tabs.forEach(function(x){
+          var active = x === t;
+          x.classList.toggle('is-active', active);
+          x.setAttribute('aria-selected', active ? 'true' : 'false');
+          if (active) { x.removeAttribute('tabindex'); } else { x.setAttribute('tabindex','-1'); }
+        });
         panels.forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-panel') === key); });
       });
     });
@@ -649,12 +659,35 @@
     var mpBody = document.getElementById('mpBody');
     var sendBtn = document.getElementById('pushSend');
 
-    function openModal(){ modal.classList.add('is-open'); setTimeout(function(){ title.focus(); }, 100); }
-    function closeModal(){ modal.classList.remove('is-open'); }
+    var lastFocus = null;
+    function getFocusable(){
+      return modal.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+    }
+    function openModal(){
+      lastFocus = document.activeElement;
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden','false');
+      setTimeout(function(){ title.focus(); }, 100);
+    }
+    function closeModal(){
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden','true');
+      if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+    }
 
     if (pushBtn) pushBtn.addEventListener('click', openModal);
     modal.querySelectorAll('[data-close]').forEach(function(el){ el.addEventListener('click', closeModal); });
-    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if (!modal.classList.contains('is-open')) return;
+      if (e.key === 'Escape'){ closeModal(); return; }
+      if (e.key === 'Tab'){
+        var f = getFocusable();
+        if (!f.length) return;
+        var first = f[0], last = f[f.length-1];
+        if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    });
 
     function sync(){
       mpTitle.textContent = title.value || 'Katy Trail run — Saturday 6AM';
