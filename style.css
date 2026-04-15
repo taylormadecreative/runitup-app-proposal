@@ -715,6 +715,39 @@ body.cursor-on.cursor-magnet .cursor-ring{width:64px;height:64px;background:rgba
   line-height: 1.5;
 }
 
+.v2-partners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.v2-partner {
+  background: #121212;
+  border: 1px solid rgba(191,255,0,0.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.v2-partner:hover {
+  border-color: rgba(191,255,0,0.45);
+  transform: translateY(-2px);
+}
+.v2-partner__name {
+  font-family: 'Big Shoulders Display', Impact, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  color: #fff;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+}
+.v2-partner__tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
 .admin__sponsor-note {
   font-size: 11px;
   font-weight: 600;
