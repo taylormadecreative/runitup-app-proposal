@@ -920,34 +920,46 @@ body.cursor-on.cursor-magnet .cursor-ring{width:64px;height:64px;background:rgba
   background:var(--lime);box-shadow:0 0 6px rgba(191,255,0,0.5);
 }
 
-/* Bonus callout — split into two narrow tiles that fit under the 3 main cards */
-.merch-bonus--split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:18px;
-}
-.merch-bonus__item{
-  position:relative;
-  padding:16px 18px 18px;
+/* Bonus callout — single compact tile under the 3 main cards */
+.merch-bonus--single{
+  margin-top:14px;
+  padding:16px 20px 18px;
   border-radius:12px;
   background:linear-gradient(135deg, rgba(191,255,0,0.05), rgba(18,18,18,0.95));
   border:1px solid rgba(191,255,0,0.28);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
 }
 .merch-bonus__tag{
   display:inline-block;
   font-family:'Big Shoulders Display', Impact, sans-serif;
   font-weight:900;font-size:10px;letter-spacing:0.22em;
   background:var(--lime);color:#0A0A0A;
-  padding:3px 9px;border-radius:4px;margin-bottom:8px;
+  padding:3px 9px;border-radius:4px;
 }
-.merch-bonus__k{
+.merch-bonus__head{
   font-family:'Big Shoulders Display', Impact, sans-serif;
-  font-weight:900;font-size:15px;letter-spacing:0.04em;
-  color:#fff;margin:0 0 6px;text-transform:uppercase;
+  font-weight:900;font-size:17px;letter-spacing:0.04em;
+  color:#fff;text-transform:uppercase;
+  margin:2px 0 6px;
 }
-.merch-bonus__v{
-  font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.78);
+.merch-bonus__body{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  font-size:13.5px;line-height:1.5;color:rgba(255,255,255,0.82);
+}
+.merch-bonus__body > span:not(.merch-bonus__sep){flex:1;min-width:240px;}
+.merch-bonus__sep{
+  width:1px;align-self:stretch;
+  background:rgba(191,255,0,0.22);
+}
+@media (max-width:640px){
+  .merch-bonus__body{flex-direction:column;gap:10px;}
+  .merch-bonus__sep{display:none;}
 }
 
 @media (max-width: 1024px){
