@@ -14,6 +14,10 @@
 </head>
 <body>
 
+<!-- Custom cursor (desktop only, JS-gated) -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
 <!-- NAV -->
 <header class="nav">
   <div class="nav__inner">
@@ -21,7 +25,7 @@
       <img src="assets/logo.png" alt="Run It UP! Dallas" />
       <span>RIU · TAYLORMADE</span>
     </a>
-    <a href="#next-steps" class="nav__cta">Book 30 Min</a>
+    <a href="#next-steps" class="nav__cta magnetic">Book 30 Min</a>
   </div>
 </header>
 
@@ -31,32 +35,149 @@
   <div class="hero__overlay"></div>
   <div class="hero__grid"></div>
 
-  <div class="hero__content reveal">
-    <div class="hero__eyebrow">
-      <span class="dot"></span>
-      CUSTOM PROPOSAL FOR THEO MURDAUGH + THE RIU DALLAS TEAM
+  <div class="hero__wrap">
+    <div class="hero__content reveal">
+      <div class="hero__eyebrow">
+        <span class="dot"></span>
+        CUSTOM PROPOSAL FOR THEO MURDAUGH + THE RIU DALLAS TEAM
+      </div>
+
+      <h1 class="hero__headline">
+        RUN IT UP! IS A<br/>
+        <span class="lime">82,000-PERSON</span><br/>
+        COMMUNITY WITHOUT<br/>
+        A HOME.<br/>
+        <span class="outline">WE BUILT THE HOME.</span>
+      </h1>
+
+      <p class="hero__sub">
+        One platform. One login. Every runner, every check-in, every sponsor report, every dollar —
+        finally in one place. Live in the App Store right now.
+      </p>
+
+      <div class="hero__tag">
+        BUILT BY THE COMMUNITY <span class="bullet">·</span> POWERED BY PURPOSE
+      </div>
+
+      <div class="hero__cta-row">
+        <a href="#reality" class="btn btn--ghost magnetic">See the Build</a>
+        <a href="#next-steps" class="btn btn--lime magnetic">Book 30 Minutes</a>
+        <a href="https://apps.apple.com/us/app/run-it-up-dallas/id6748879842" target="_blank" rel="noopener" class="btn btn--appstore magnetic" id="appStoreBtn">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M17.05 12.04c-.02-2.2 1.8-3.27 1.88-3.32-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.6 2.18-1.55 2.69-.4 6.67 1.1 8.85.74 1.07 1.61 2.27 2.75 2.23 1.1-.04 1.52-.71 2.86-.71s1.71.71 2.88.69c1.19-.02 1.94-1.09 2.67-2.17.84-1.24 1.18-2.44 1.2-2.5-.03-.01-2.3-.88-2.33-3.56zM14.81 5.5c.6-.73 1.01-1.75.9-2.77-.87.04-1.93.58-2.56 1.31-.56.64-1.06 1.68-.93 2.68.98.07 1.98-.5 2.59-1.22z"/></svg>
+          <span>Download on App Store</span>
+        </a>
+      </div>
     </div>
 
-    <h1 class="hero__headline">
-      RUN IT UP! IS A<br/>
-      <span class="lime">82,000-PERSON</span><br/>
-      COMMUNITY WITHOUT<br/>
-      A HOME.<br/>
-      <span class="outline">WE BUILT THE HOME.</span>
-    </h1>
+    <!-- LIVE WORKING PHONE -->
+    <div class="hero-phone reveal" id="livePhone">
+      <div class="lp-frame">
+        <div class="lp-notch"></div>
+        <div class="lp-viewport" id="lpViewport">
+          <!-- Screen 1 : HOME -->
+          <div class="lp-screen lp-home is-active" data-screen="home">
+            <div class="lp-top">
+              <div class="lp-brand">RIU</div>
+              <div class="lp-streak"><span class="lime" id="lpStreak">14</span>wk</div>
+            </div>
+            <div class="lp-weather" id="lpWeather">
+              <div class="lp-weather__left">
+                <div class="lp-weather__label">DALLAS · LIVE</div>
+                <div class="lp-weather__temp" id="lpTemp">—°</div>
+                <div class="lp-weather__cond" id="lpCond">loading…</div>
+              </div>
+              <div class="lp-weather__icon" id="lpIcon">☀</div>
+            </div>
+            <div class="lp-card">
+              <div class="lp-label">NEXT RUN</div>
+              <div class="lp-run">SAT · KATY TRAIL</div>
+              <div class="lp-meta">6:00 AM · 3.2 MI</div>
+              <div class="lp-btn lime-bg">I'M PULLING UP</div>
+            </div>
+            <div class="lp-feed">
+              <div class="lp-feed-item"><span class="lime">JORDAN</span> hit a 4-week streak</div>
+              <div class="lp-feed-item"><span class="lime">TEE</span> unlocked Century Badge</div>
+              <div class="lp-feed-item"><span class="lime">RIU</span> posted in #south-dallas</div>
+            </div>
+          </div>
 
-    <p class="hero__sub">
-      One platform. One login. Every runner, every check-in, every sponsor report, every dollar —
-      finally in one place. Live in the App Store right now.
-    </p>
+          <!-- Screen 2 : TRACKER -->
+          <div class="lp-screen lp-track" data-screen="track">
+            <div class="lp-track-map">
+              <svg viewBox="0 0 200 260" preserveAspectRatio="none" class="lp-track-svg">
+                <path id="lpTrackPath" d="M30,220 Q60,160 90,170 T150,120 Q170,90 160,50" stroke="#BFFF00" stroke-width="3" fill="none" stroke-dasharray="400" stroke-dashoffset="400" />
+                <circle id="lpTrackDot" cx="30" cy="220" r="5" fill="#BFFF00" />
+              </svg>
+            </div>
+            <div class="lp-track-stats">
+              <div class="lp-stat"><div class="lp-num" id="lpMiles">0.00</div><div class="lp-unit">MI</div></div>
+              <div class="lp-stat"><div class="lp-num lime" id="lpPace">0:00</div><div class="lp-unit">PACE</div></div>
+              <div class="lp-stat"><div class="lp-num" id="lpTime">0:00</div><div class="lp-unit">TIME</div></div>
+            </div>
+            <div class="lp-btn red-bg">END RUN</div>
+          </div>
 
-    <div class="hero__tag">
-      BUILT BY THE COMMUNITY <span class="bullet">·</span> POWERED BY PURPOSE
-    </div>
+          <!-- Screen 3 : CHAT -->
+          <div class="lp-screen lp-chat" data-screen="chat">
+            <div class="lp-chat-head">#south-dallas</div>
+            <div class="lp-chat-body" id="lpChatBody">
+              <div class="lp-bubble">Pulling up Saturday?</div>
+              <div class="lp-bubble lp-bubble--me">Bet. See you at 6.</div>
+              <div class="lp-bubble">Who got an extra reflective vest?</div>
+            </div>
+            <div class="lp-typing" id="lpTyping"><span></span><span></span><span></span></div>
+            <div class="lp-input">Message #south-dallas</div>
+          </div>
 
-    <div class="hero__cta-row">
-      <a href="#reality" class="btn btn--ghost">See the Build</a>
-      <a href="#next-steps" class="btn btn--lime">Book 30 Minutes</a>
+          <!-- Screen 4 : STATS -->
+          <div class="lp-screen lp-stats" data-screen="stats">
+            <div class="lp-profile">
+              <div class="lp-avatar"></div>
+              <div>
+                <div class="lp-name">THEO M.</div>
+                <div class="lp-handle">@runitupceo</div>
+              </div>
+            </div>
+            <div class="lp-big-stat">
+              <div class="lp-big-num lime" id="lpRollStreak">0</div>
+              <div class="lp-big-label">WEEK STREAK</div>
+            </div>
+            <div class="lp-badges">
+              <div class="lp-badge" id="lpBadgePop">NR</div>
+              <div class="lp-badge">FS</div>
+              <div class="lp-badge">EB</div>
+              <div class="lp-badge">100</div>
+            </div>
+          </div>
+
+          <!-- Screen 5 : PROFILE -->
+          <div class="lp-screen lp-profile-screen" data-screen="profile">
+            <div class="lp-pf-hero">
+              <div class="lp-pf-avatar"></div>
+              <div class="lp-pf-name">RUN IT UP! DALLAS</div>
+              <div class="lp-pf-handle">@runitupdallas</div>
+            </div>
+            <div class="lp-pf-grid">
+              <div><div class="lp-num lime">142</div><div class="lp-unit">RUNS</div></div>
+              <div><div class="lp-num lime">381</div><div class="lp-unit">MILES</div></div>
+              <div><div class="lp-num lime">22</div><div class="lp-unit">BADGES</div></div>
+            </div>
+            <div class="lp-pf-list">
+              <div class="lp-pf-row">MY CREW <span>317</span></div>
+              <div class="lp-pf-row">NOTIFICATIONS <span>ON</span></div>
+              <div class="lp-pf-row">SHARE TO STORIES <span>→</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lp-dots" id="lpDots">
+        <button class="lp-dot is-active" data-idx="0" aria-label="Home"></button>
+        <button class="lp-dot" data-idx="1" aria-label="Run Tracker"></button>
+        <button class="lp-dot" data-idx="2" aria-label="Chat"></button>
+        <button class="lp-dot" data-idx="3" aria-label="Stats"></button>
+        <button class="lp-dot" data-idx="4" aria-label="Profile"></button>
+      </div>
+      <div class="lp-caption">LIVE · AUTO-CYCLING · TAP A DOT</div>
     </div>
   </div>
 
@@ -65,7 +186,7 @@
   </a>
 </section>
 
-<!-- SECTION 2 — THE REALITY -->
+<!-- SECTION 2 — THE REALITY + LIVE CALCULATOR -->
 <section id="reality" class="section section--dark">
   <div class="container">
     <div class="section__head reveal">
@@ -76,46 +197,102 @@
         AND THEO'S PERSONAL PHONE.
       </h2>
       <p class="section__lead">
-        You're running a 2025 Fitness Org of the Year on 2015 infrastructure. Here's what it's
-        actually costing the crew.
+        You're running a 2025 Fitness Org of the Year on 2015 infrastructure. Drag the sliders — this
+        is what the fragmentation is actually costing the crew.
       </p>
     </div>
 
-    <div class="pain-grid">
-      <div class="pain reveal">
-        <div class="pain__tag">GOOGLE FORMS</div>
-        <h3>RSVPs That Vanish</h3>
-        <p>Every run collects names — then deletes the relationship. Zero record of who showed up six weeks in a row.</p>
+    <!-- Interactive tool calculator -->
+    <div class="tool-calc reveal" id="toolCalc">
+      <div class="tc-grid">
+        <!-- card -->
+        <div class="tc-card" data-tool="linktree">
+          <div class="tc-head"><div class="tc-tag">LINKTREE</div><div class="tc-cost" data-cost>$12/mo</div></div>
+          <h4>The Bio Link Black Box</h4>
+          <p>81,000 followers click. Zero data on who, when, or what they wanted next.</p>
+          <div class="tc-slider-wrap">
+            <label>Plan cost: <span data-val>$12</span>/mo</label>
+            <input type="range" min="5" max="24" value="12" step="1" class="tc-slider" data-unit="$/mo" data-key="linktree" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="forms">
+          <div class="tc-head"><div class="tc-tag">GOOGLE FORMS</div><div class="tc-cost" data-cost>6 hrs/mo</div></div>
+          <h4>RSVPs That Vanish</h4>
+          <p>Every run collects names — then deletes the relationship. Zero record of who showed up.</p>
+          <div class="tc-slider-wrap">
+            <label>Events managed: <span data-val>8</span>/mo</label>
+            <input type="range" min="2" max="20" value="8" step="1" class="tc-slider" data-unit="events" data-key="forms" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="eventbrite">
+          <div class="tc-head"><div class="tc-tag">EVENTBRITE</div><div class="tc-cost" data-cost>$—/mo</div></div>
+          <h4>3.7% + $1.79 Per Ticket</h4>
+          <p>Every ticketed event bleeds 5–8% of gross to a platform that doesn't know the crew.</p>
+          <div class="tc-slider-wrap">
+            <label>Tickets sold: <span data-val>150</span>/mo @ $25</label>
+            <input type="range" min="0" max="500" value="150" step="10" class="tc-slider" data-unit="tickets" data-key="eventbrite" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="dms">
+          <div class="tc-head"><div class="tc-tag">INSTAGRAM DM</div><div class="tc-cost" data-cost>— hrs/mo</div></div>
+          <h4>Theo's Personal Inbox</h4>
+          <p>Member questions, run buddy intros, brand asks — routed through one phone at 11pm.</p>
+          <div class="tc-slider-wrap">
+            <label>DMs handled: <span data-val>200</span>/mo</label>
+            <input type="range" min="50" max="600" value="200" step="10" class="tc-slider" data-unit="dms" data-key="dms" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="groupme">
+          <div class="tc-head"><div class="tc-tag">GROUPME / IG CHATS</div><div class="tc-cost" data-cost>12 channels</div></div>
+          <h4>12 Channels, Zero Moderation</h4>
+          <p>No search, no archive, no blocks, no admin view. Onboarding = adding to a dozen threads.</p>
+          <div class="tc-slider-wrap">
+            <label>Active group chats: <span data-val>12</span></label>
+            <input type="range" min="3" max="20" value="12" step="1" class="tc-slider" data-unit="chats" data-key="groupme" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="merch">
+          <div class="tc-head"><div class="tc-tag">POP-UP MERCH</div><div class="tc-cost" data-cost>$—/mo lost</div></div>
+          <h4>Present-Only Revenue</h4>
+          <p>The table serves 200. The 81,800 followers who didn't show — excluded.</p>
+          <div class="tc-slider-wrap">
+            <label>Members reached online: <span data-val>0</span>/mo</label>
+            <input type="range" min="0" max="2000" value="0" step="50" class="tc-slider" data-unit="members" data-key="merch" />
+          </div>
+        </div>
+
+        <div class="tc-card" data-tool="reports">
+          <div class="tc-head"><div class="tc-tag">SCREENSHOT REPORTS</div><div class="tc-cost" data-cost>— hrs/qtr</div></div>
+          <h4>Manual Sponsor Decks</h4>
+          <p>Propel. ASICS. Champs. Screenshots, hand-typed numbers. The data they want lives nowhere.</p>
+          <div class="tc-slider-wrap">
+            <label>Sponsor reports: <span data-val>4</span>/qtr</label>
+            <input type="range" min="1" max="12" value="4" step="1" class="tc-slider" data-unit="reports" data-key="reports" />
+          </div>
+        </div>
       </div>
-      <div class="pain reveal">
-        <div class="pain__tag">LINKTREE</div>
-        <h3>The Bio Link Black Box</h3>
-        <p>81,000 followers click. You get zero data on who, when, or what they wanted next.</p>
-      </div>
-      <div class="pain reveal">
-        <div class="pain__tag">INSTAGRAM DM</div>
-        <h3>Theo's Personal Inbox</h3>
-        <p>Member questions, run buddy intros, brand asks — all routed through a founder's phone at 11pm.</p>
-      </div>
-      <div class="pain reveal">
-        <div class="pain__tag">EVENTBRITE</div>
-        <h3>3.7% + $1.79 Per Ticket</h3>
-        <p>Every ticketed special event quietly bleeds 5–8% of gross to a platform that doesn't even know the crew exists.</p>
-      </div>
-      <div class="pain reveal">
-        <div class="pain__tag">GROUPME / IG CHATS</div>
-        <h3>12 Channels, Zero Moderation</h3>
-        <p>No search, no archive, no blocks, no admin view. Onboarding a new runner means adding them to a dozen threads.</p>
-      </div>
-      <div class="pain reveal">
-        <div class="pain__tag">POP-UP MERCH</div>
-        <h3>Present-Only Revenue</h3>
-        <p>The table at the run serves the 200 who showed. The 81,800 followers who didn't — excluded.</p>
-      </div>
-      <div class="pain reveal">
-        <div class="pain__tag">SCREENSHOT REPORTS</div>
-        <h3>Manual Sponsor Decks</h3>
-        <p>Propel. ASICS. Champs. Every report is IG insights, screenshots, hand-typed numbers. The data they actually want lives nowhere.</p>
+
+      <div class="tc-totals">
+        <div class="tc-total">
+          <div class="tc-total__label">MONTHLY SAAS SPEND</div>
+          <div class="tc-total__num"><span class="lime">$</span><span id="tcMoneyOut">0</span></div>
+          <div class="tc-total__sub">We consolidate all of it.</div>
+        </div>
+        <div class="tc-total">
+          <div class="tc-total__label">HOURS / MONTH GIVEN BACK</div>
+          <div class="tc-total__num"><span id="tcHoursOut">0</span><span class="lime"> hrs</span></div>
+          <div class="tc-total__sub">Theo clocks out.</div>
+        </div>
+        <div class="tc-total">
+          <div class="tc-total__label">REVENUE LEFT ON THE TABLE</div>
+          <div class="tc-total__num"><span class="lime">$</span><span id="tcLostOut">0</span></div>
+          <div class="tc-total__sub">Tickets fees + offline-only merch.</div>
+        </div>
       </div>
     </div>
   </div>
@@ -133,90 +310,6 @@
       </h2>
     </div>
 
-    <!-- Phone mockups -->
-    <div class="phones reveal">
-      <div class="phone phone--1">
-        <div class="phone__frame">
-          <div class="phone__notch"></div>
-          <div class="phone__screen phone--home">
-            <div class="ph-top">
-              <div class="ph-brand">RIU</div>
-              <div class="ph-streak"><span class="lime">14</span>wk</div>
-            </div>
-            <div class="ph-card">
-              <div class="ph-label">NEXT RUN</div>
-              <div class="ph-run">SAT · KATY TRAIL</div>
-              <div class="ph-meta">6:00 AM · 72°F · 3.2 MI</div>
-              <div class="ph-btn lime-bg">I'M PULLING UP</div>
-            </div>
-            <div class="ph-feed">
-              <div class="ph-feed-item"><span class="lime">JORDAN</span> hit a 4-week streak</div>
-              <div class="ph-feed-item"><span class="lime">TEE</span> unlocked Century Badge</div>
-              <div class="ph-feed-item"><span class="lime">RIU</span> posted in #south-dallas</div>
-            </div>
-          </div>
-        </div>
-        <div class="phone__label">HOME</div>
-      </div>
-
-      <div class="phone phone--2">
-        <div class="phone__frame">
-          <div class="phone__notch"></div>
-          <div class="phone__screen phone--track">
-            <div class="ph-track-map"></div>
-            <div class="ph-track-stats">
-              <div class="ph-stat"><div class="ph-num">3.24</div><div class="ph-unit">MI</div></div>
-              <div class="ph-stat"><div class="ph-num lime">8:42</div><div class="ph-unit">PACE</div></div>
-              <div class="ph-stat"><div class="ph-num">28:11</div><div class="ph-unit">TIME</div></div>
-            </div>
-            <div class="ph-btn red-bg">END RUN</div>
-          </div>
-        </div>
-        <div class="phone__label">RUN TRACKER</div>
-      </div>
-
-      <div class="phone phone--3">
-        <div class="phone__frame">
-          <div class="phone__notch"></div>
-          <div class="phone__screen phone--stats">
-            <div class="ph-profile">
-              <div class="ph-avatar"></div>
-              <div>
-                <div class="ph-name">THEO M.</div>
-                <div class="ph-handle">@runitupceo</div>
-              </div>
-            </div>
-            <div class="ph-big-stat">
-              <div class="ph-big-num lime">142</div>
-              <div class="ph-big-label">RUNS LOGGED</div>
-            </div>
-            <div class="ph-badges">
-              <div class="ph-badge">NR</div>
-              <div class="ph-badge">FS</div>
-              <div class="ph-badge">EB</div>
-              <div class="ph-badge">100</div>
-            </div>
-          </div>
-        </div>
-        <div class="phone__label">STATS</div>
-      </div>
-
-      <div class="phone phone--4">
-        <div class="phone__frame">
-          <div class="phone__notch"></div>
-          <div class="phone__screen phone--chat">
-            <div class="ph-chat-head">#south-dallas</div>
-            <div class="ph-bubble">Pulling up Saturday?</div>
-            <div class="ph-bubble ph-bubble--me">Bet. See you at 6.</div>
-            <div class="ph-bubble">Who got an extra reflective vest?</div>
-            <div class="ph-bubble ph-bubble--me lime-bg">I got you 🏃🏾</div>
-            <div class="ph-input">Message #south-dallas</div>
-          </div>
-        </div>
-        <div class="phone__label">CHAT</div>
-      </div>
-    </div>
-
     <!-- Feature groups -->
     <div class="features">
       <div class="feature-group reveal">
@@ -231,19 +324,91 @@
       <div class="feature-group reveal">
         <div class="feature-group__num">COM<br/>MUN<br/>ITY</div>
         <div class="feature-group__list">
-          <div class="feat"><h4>12 Community Channels</h4><p>Real-time chat, admin controls, search, and archive — replaces every GroupMe and IG group thread.</p></div>
-          <div class="feat"><h4>DMs With Real Safety</h4><p>Block, report, mute. The first wellness community platform built for Black and Brown runners with the moderation to match.</p></div>
+          <div class="feat"><h4>12 Community Channels</h4><p>Real-time chat, admin controls, search, archive — replaces every GroupMe and IG thread.</p></div>
+          <div class="feat"><h4>DMs With Real Safety</h4><p>Block, report, mute. First wellness community platform built for Black and Brown runners with the moderation to match.</p></div>
           <div class="feat"><h4>Run Buddy Matching</h4><p>Mutual-consent pairing. Both runners opt in. No creeps, no cold messages.</p></div>
-          <div class="feat"><h4>Tappable Member Profiles</h4><p>Badges, streak history, and a relationship to the crew that doesn't disappear when IG changes the algorithm.</p></div>
+          <div class="feat"><h4>Tappable Member Profiles</h4><p>Badges, streak history, a relationship to the crew that doesn't disappear when IG changes the algorithm.</p></div>
         </div>
       </div>
 
       <div class="feature-group reveal">
         <div class="feature-group__num">BRAND<br/>+<br/>GROWTH</div>
         <div class="feature-group__list">
-          <div class="feat"><h4>Share-to-Stories Cards</h4><p>Every check-in, every milestone, every streak — generates a branded IG Story card in one tap. Built-in viral loop.</p></div>
+          <div class="feat"><h4>Share-to-Stories Cards</h4><p>Every check-in, every milestone, every streak — generates a branded IG Story card in one tap.</p></div>
           <div class="feat"><h4>Crew Invite Links</h4><p>Referral tracking on every invite. Know exactly who brings who.</p></div>
           <div class="feat"><h4>Welcome Onboarding</h4><p>Every new runner becomes a real CRM record — name, neighborhood, goals, pace.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD MOCK -->
+    <div class="admin reveal" id="admin">
+      <div class="admin__head">
+        <div>
+          <div class="kicker lime" style="margin-bottom:8px;">ADMIN DASHBOARD · CLICKABLE DEMO</div>
+          <h3 class="admin__title">WHAT THEO'S OPS DIRECTOR ACTUALLY USES.</h3>
+        </div>
+      </div>
+
+      <div class="admin__tabs" role="tablist">
+        <button class="admin__tab is-active" data-tab="overview">Overview</button>
+        <button class="admin__tab" data-tab="members">Members</button>
+        <button class="admin__tab" data-tab="events">Events</button>
+        <button class="admin__tab" data-tab="channels">Channels</button>
+        <button class="admin__tab" data-tab="sponsors">Sponsors</button>
+      </div>
+
+      <div class="admin__panel is-active" data-panel="overview">
+        <div class="admin__metrics">
+          <div class="ametric"><div class="ametric__label">Active this week</div><div class="ametric__num" data-count="247">0</div></div>
+          <div class="ametric"><div class="ametric__label">Check-in rate</div><div class="ametric__num" data-count="78" data-suffix="%">0</div></div>
+          <div class="ametric"><div class="ametric__label">Top streak</div><div class="ametric__num" data-count="22" data-suffix=" wks">0</div></div>
+          <div class="ametric"><div class="ametric__label">New members (30d)</div><div class="ametric__num" data-count="186">0</div></div>
+          <div class="ametric"><div class="ametric__label">Avg runs / member</div><div class="ametric__num" data-count="3.4" data-suffix="/wk">0</div></div>
+        </div>
+        <div class="admin__actions">
+          <button class="btn btn--lime magnetic" id="pushBtn">Send Push Notification</button>
+          <button class="btn btn--ghost magnetic" id="csvBtn">Export Members CSV</button>
+        </div>
+      </div>
+
+      <div class="admin__panel" data-panel="members">
+        <table class="admin__table">
+          <thead><tr><th>Name</th><th>Neighborhood</th><th>Streak</th><th>Last Run</th></tr></thead>
+          <tbody>
+            <tr><td>Jordan B.</td><td>South Dallas</td><td>14 wk</td><td>Sat · 3.2mi</td></tr>
+            <tr><td>Tee W.</td><td>Oak Cliff</td><td>22 wk</td><td>Sat · 4.1mi</td></tr>
+            <tr><td>Mia G.</td><td>Deep Ellum</td><td>6 wk</td><td>Wed · 2.8mi</td></tr>
+            <tr><td>Kendrick L.</td><td>Pleasant Grove</td><td>11 wk</td><td>Sat · 3.2mi</td></tr>
+            <tr><td>Rasheed A.</td><td>South Dallas</td><td>9 wk</td><td>Sat · 5.0mi</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="admin__panel" data-panel="events">
+        <div class="admin__events">
+          <div class="ae"><div class="ae__date">SAT APR 18</div><div class="ae__title">Katy Trail · 3.2mi</div><div class="ae__rsvp">RSVP <b>214</b></div></div>
+          <div class="ae"><div class="ae__date">WED APR 22</div><div class="ae__title">Speed Session · Fair Park</div><div class="ae__rsvp">RSVP <b>86</b></div></div>
+          <div class="ae"><div class="ae__date">SAT APR 25</div><div class="ae__title">Anniversary 5-mile</div><div class="ae__rsvp">RSVP <b>347</b></div></div>
+        </div>
+      </div>
+
+      <div class="admin__panel" data-panel="channels">
+        <div class="admin__channels">
+          <div class="ac">#south-dallas <span>812 · 47 today</span></div>
+          <div class="ac">#oak-cliff <span>604 · 28 today</span></div>
+          <div class="ac">#speed-work <span>211 · 12 today</span></div>
+          <div class="ac">#womens-circle <span>438 · 33 today</span></div>
+          <div class="ac ac--sponsored">#propel-hydration-tips <span class="lime">SPONSORED · 1,204</span></div>
+        </div>
+      </div>
+
+      <div class="admin__panel" data-panel="sponsors">
+        <div class="admin__sponsors">
+          <div class="as"><div>Propel</div><div>Channel · 90 days</div><div class="lime">$8,500</div></div>
+          <div class="as"><div>ASICS</div><div>Run · 1 event</div><div class="lime">$3,500</div></div>
+          <div class="as"><div>Champs</div><div>Badge · quarterly</div><div class="lime">$4,000</div></div>
+          <div class="as"><div>Smoothie King</div><div>Welcome push · monthly</div><div class="lime">$1,800</div></div>
         </div>
       </div>
     </div>
@@ -255,41 +420,67 @@
   </div>
 </section>
 
-<!-- SECTION 4 — BEFORE / AFTER -->
+<!-- COMMUNITY PULSE -->
+<section id="pulse" class="section section--pulse">
+  <div class="container">
+    <div class="section__head reveal">
+      <div class="kicker lime">LIVE · COMMUNITY PULSE</div>
+      <h2 class="section__title">
+        THIS IS WHAT YOUR CREW
+        <span class="lime">ACTUALLY LOOKS LIKE</span>
+        WHEN IT'S CONNECTED.
+      </h2>
+      <p class="section__lead">
+        Every dot is a runner. Every line is a DM, a run match, a check-in together. Static on IG. Alive here.
+      </p>
+    </div>
+    <div class="pulse-wrap reveal">
+      <canvas id="pulseCanvas"></canvas>
+      <div class="pulse-legend">
+        <span><i class="pl-node"></i> RUNNER</span>
+        <span><i class="pl-edge"></i> INTERACTION</span>
+        <span><i class="pl-hot"></i> ACTIVE NOW</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — BEFORE / AFTER (scroll-driven) -->
 <section id="relief" class="section section--split">
   <div class="container">
     <div class="section__head reveal">
       <div class="kicker">03 · WHAT THIS TAKES OFF YOUR PLATE</div>
       <h2 class="section__title">THIS GIVES THEO HIS <span class="lime">PHONE BACK</span>.</h2>
+      <p class="section__lead">Scroll. Watch the old way crumble. Watch the new way build.</p>
     </div>
 
-    <div class="ba-grid">
-      <div class="ba-row reveal">
+    <div class="ba-grid" id="baGrid">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>Theo answers DMs at midnight.</p></div>
         <div class="ba__arrow">→</div>
         <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Members message each other in-app. Theo clocks out.</p></div>
       </div>
-      <div class="ba-row reveal">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>Build a Google Form for every event.</p></div>
         <div class="ba__arrow">→</div>
-        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Create the event in 30 seconds. Push notification to every member.</p></div>
+        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Create the event in 30 seconds. Push to every member.</p></div>
       </div>
-      <div class="ba-row reveal">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>Pop-up merch table at the run.</p></div>
         <div class="ba__arrow">→</div>
-        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Members buy in-app. Pickup at the run or shipped to their door.</p></div>
+        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Members buy in-app. Pickup at the run or shipped home.</p></div>
       </div>
-      <div class="ba-row reveal">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>Screenshot IG insights for Propel.</p></div>
         <div class="ba__arrow">→</div>
         <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>Auto-generated sponsor reports. Attendance, demographics, engagement.</p></div>
       </div>
-      <div class="ba-row reveal">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>New runner = a name in a notebook.</p></div>
         <div class="ba__arrow">→</div>
-        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>New runner = a profile, a streak history, a way to bring them back.</p></div>
+        <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>New runner = profile, streak, a way to bring them back.</p></div>
       </div>
-      <div class="ba-row reveal">
+      <div class="ba-row">
         <div class="ba ba--before"><div class="ba__tag">BEFORE</div><p>6 SaaS tools. 6 logins. 6 invoices.</p></div>
         <div class="ba__arrow">→</div>
         <div class="ba ba--after"><div class="ba__tag lime">AFTER</div><p>One platform. One login. One organization.</p></div>
@@ -298,7 +489,7 @@
   </div>
 </section>
 
-<!-- SECTION 5 — V2 REVENUE -->
+<!-- SECTION 5 — V2 REVENUE + CALCULATOR -->
 <section id="v2" class="section section--v2">
   <div class="v2__bg" style="background-image:url('assets/photos/motion-night.jpg')"></div>
   <div class="v2__overlay"></div>
@@ -311,7 +502,46 @@
       </h2>
       <p class="section__lead">
         Phase one is the foundation. Phase two turns Run It UP! into a self-funding platform.
+        Move the sliders. This is your math.
       </p>
+    </div>
+
+    <!-- REVENUE CALCULATOR -->
+    <div class="roi reveal" id="roi">
+      <div class="roi__inputs">
+        <div class="roi__input">
+          <label>Active members <span class="roi__val" id="rvMembers">300</span></label>
+          <input type="range" min="100" max="2000" step="10" value="300" id="rMembers" />
+        </div>
+        <div class="roi__input">
+          <label>Merch purchase rate <span class="roi__val" id="rvMerch">25%</span></label>
+          <input type="range" min="5" max="50" step="1" value="25" id="rMerch" />
+        </div>
+        <div class="roi__input">
+          <label>Avg order value <span class="roi__val" id="rvAov">$45</span></label>
+          <input type="range" min="20" max="100" step="1" value="45" id="rAov" />
+        </div>
+        <div class="roi__input">
+          <label>Sponsor placements / qtr <span class="roi__val" id="rvSP">4</span></label>
+          <input type="range" min="0" max="10" step="1" value="4" id="rSP" />
+        </div>
+        <div class="roi__input">
+          <label>Avg sponsor placement <span class="roi__val" id="rvSPrice">$3,500</span></label>
+          <input type="range" min="1000" max="10000" step="100" value="3500" id="rSPrice" />
+        </div>
+      </div>
+
+      <div class="roi__output">
+        <div class="roi__tiles">
+          <div class="rtile"><div class="rtile__label">Annual merch revenue</div><div class="rtile__num"><span class="lime">$</span><span id="oMerch">0</span></div></div>
+          <div class="rtile"><div class="rtile__label">Annual sponsor revenue</div><div class="rtile__num"><span class="lime">$</span><span id="oSponsor">0</span></div></div>
+          <div class="rtile rtile--big"><div class="rtile__label">TOTAL ANNUAL PLATFORM REVENUE</div><div class="rtile__num"><span class="lime">$</span><span id="oTotal">0</span></div></div>
+        </div>
+        <div class="roi__bars">
+          <div class="rbar"><div class="rbar__label">Merch</div><div class="rbar__track"><div class="rbar__fill rbar__fill--merch" id="barMerch"></div></div></div>
+          <div class="rbar"><div class="rbar__label">Sponsor</div><div class="rbar__track"><div class="rbar__fill rbar__fill--sponsor" id="barSponsor"></div></div></div>
+        </div>
+      </div>
     </div>
 
     <!-- MERCH -->
@@ -323,10 +553,7 @@
           Hit a 4-week streak? The Streak Tee is unlocked in the app for 24 hours. Run the anniversary
           5-mile? Today's commemorative gear is yours to claim.
         </p>
-        <p>
-          This isn't e-commerce — it's community status. You can't buy the Streak Tee on Shopify
-          because you didn't earn it.
-        </p>
+        <p>This isn't e-commerce — it's community status. You can't buy the Streak Tee on Shopify because you didn't earn it.</p>
         <div class="v2-stat">
           <div class="v2-stat__num lime">8–15%</div>
           <div class="v2-stat__label">Triggered drop conversion rate<br/><span class="muted">vs ~1.5% on a generic Shopify store</span></div>
@@ -344,28 +571,66 @@
           to a Black and Brown wellness community.</span> The platform creates inventory that's
           actually sponsorable.
         </p>
-        <div class="sponsor-grid">
-          <div class="sponsor-card">
-            <div class="sc-tag">SPONSORED CHANNEL</div>
-            <p><strong>Propel Hydration Tips</strong> — owned by Propel for 90 days vs. a 24-hour IG post.</p>
+
+        <!-- INTERACTIVE SPONSOR INVENTORY -->
+        <div class="si" id="si">
+          <div class="si__tabs">
+            <button class="si__tab is-active" data-si="channel">Sponsored Channel</button>
+            <button class="si__tab" data-si="run">Sponsored Run</button>
+            <button class="si__tab" data-si="badge">Sponsored Badge</button>
+            <button class="si__tab" data-si="push">Welcome Push</button>
           </div>
-          <div class="sponsor-card">
-            <div class="sc-tag">SPONSORED RUN</div>
-            <p>"This Saturday's run is presented by <strong>ASICS</strong> — check in to enter the giveaway."</p>
-          </div>
-          <div class="sponsor-card">
-            <div class="sc-tag">SPONSORED BADGE</div>
-            <p><strong>Champs Sports Century Badge</strong> unlocks 15% off in-app.</p>
-          </div>
-          <div class="sponsor-card">
-            <div class="sc-tag">WELCOME PUSH</div>
-            <p>Every new member's first push from <strong>Smoothie King</strong>.</p>
-          </div>
-          <div class="sponsor-card sponsor-card--wide">
-            <div class="sc-tag lime">AUTO PARTNER REPORTS</div>
-            <p>Monthly decks with attendance, demographics, engagement, redemption — the data brand teams have been begging IG for and can't get.</p>
+          <div class="si__stage">
+            <!-- channel -->
+            <div class="si__demo is-active" data-demo="channel">
+              <div class="si-phone">
+                <div class="si-head"><span class="lime">#propel-hydration-tips</span><span class="si-spon">SPONSORED · 90 DAYS</span></div>
+                <div class="si-msg"><b>Propel</b><p>Pre-run hydration: 16oz water + electrolytes 30 min before. Drop questions below.</p></div>
+                <div class="si-msg si-msg--me"><b>Jordan</b><p>Saved. Running the 5-mile Saturday.</p></div>
+                <div class="si-msg"><b>Propel</b><p>You got this. Giveaway for everyone who checks in Saturday ⬇</p></div>
+              </div>
+              <p class="si__caption">Propel <b>owns</b> a channel for 90 days. The conversation lives there. IG posts die in 24 hours.</p>
+            </div>
+            <!-- run -->
+            <div class="si__demo" data-demo="run">
+              <div class="si-phone">
+                <div class="si-run-card">
+                  <div class="si-run-tag">PRESENTED BY <span class="lime">ASICS</span></div>
+                  <div class="si-run-title">SAT · KATY TRAIL · 3.2MI</div>
+                  <div class="si-run-meta">6:00 AM · 214 RSVPs</div>
+                  <div class="si-run-giveaway">🎁 Check in to enter the ASICS giveaway</div>
+                  <div class="lp-btn lime-bg">I'M PULLING UP</div>
+                </div>
+              </div>
+              <p class="si__caption">Every RSVP, every check-in, every photo — tagged to ASICS. Auto-rolled into the monthly report.</p>
+            </div>
+            <!-- badge -->
+            <div class="si__demo" data-demo="badge">
+              <div class="si-phone">
+                <div class="si-badge-unlock">
+                  <div class="si-badge-halo"></div>
+                  <div class="si-badge-ring"><div class="si-badge-inner">100</div></div>
+                  <div class="si-badge-title">CENTURY BADGE UNLOCKED</div>
+                  <div class="si-badge-sub">Presented by <span class="lime">CHAMPS SPORTS</span></div>
+                  <div class="si-badge-offer">15% OFF in-app · tap to redeem</div>
+                </div>
+              </div>
+              <p class="si__caption">Status + status-based offer. Members unlock this by running, not by clicking an ad.</p>
+            </div>
+            <!-- push -->
+            <div class="si__demo" data-demo="push">
+              <div class="si-phone">
+                <div class="si-push">
+                  <div class="si-push-top"><span>RIU DALLAS</span><span class="si-push-now">now</span></div>
+                  <div class="si-push-title">Welcome to the crew 🏃🏾</div>
+                  <div class="si-push-body">Your first run is on us. Smoothie King is hooking up every new member with a 20oz recovery smoothie — tap to claim.</div>
+                </div>
+              </div>
+              <p class="si__caption">Every new member's first touch is a sponsor-funded gift. Smoothie King pays to be the welcome.</p>
+            </div>
           </div>
         </div>
+
         <p class="v2-close">
           Right now Propel pays you because they trust the community is here. They have no idea what
           happens after the check clears. <span class="lime">The platform is how Run It UP! starts
@@ -409,10 +674,7 @@
         the energy in between, deepens the relationships you've already built, and gives you the data
         story to charge brands what the community is actually worth.
       </p>
-      <p class="why__close">
-        <span class="lime">Built By the Community. Powered by Purpose.</span>
-        Is in the DNA of every screen we built.
-      </p>
+      <p class="why__close typed" data-typed="BUILT BY THE COMMUNITY. POWERED BY PURPOSE. Is in the DNA of every screen we built."></p>
     </div>
   </div>
 </section>
@@ -450,11 +712,16 @@
     </div>
 
     <div class="cta-wrap reveal">
-      <a href="mailto:taylormademd@gmail.com?subject=Run%20It%20UP!%20Dallas%20App%20-%20call" class="cta-big">
+      <a href="mailto:taylormademd@gmail.com?subject=Run%20It%20UP!%20Dallas%20App%20-%20call" class="cta-big magnetic">
         REPLY TO BOOK 30 MINUTES
         <span class="cta-arrow">→</span>
       </a>
       <p class="cta-sub">taylormademd@gmail.com · (817) 707-1291</p>
+
+      <a href="https://apps.apple.com/us/app/run-it-up-dallas/id6748879842" target="_blank" rel="noopener" class="appstore-badge magnetic">
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor"><path d="M17.05 12.04c-.02-2.2 1.8-3.27 1.88-3.32-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.6 2.18-1.55 2.69-.4 6.67 1.1 8.85.74 1.07 1.61 2.27 2.75 2.23 1.1-.04 1.52-.71 2.86-.71s1.71.71 2.88.69c1.19-.02 1.94-1.09 2.67-2.17.84-1.24 1.18-2.44 1.2-2.5-.03-.01-2.3-.88-2.33-3.56zM14.81 5.5c.6-.73 1.01-1.75.9-2.77-.87.04-1.93.58-2.56 1.31-.56.64-1.06 1.68-.93 2.68.98.07 1.98-.5 2.59-1.22z"/></svg>
+        <span><small>Try the actual app</small>Download on the App Store</span>
+      </a>
     </div>
   </div>
 </section>
@@ -483,6 +750,33 @@
     </div>
   </div>
 </section>
+
+<!-- PUSH MODAL -->
+<div class="modal" id="pushModal" aria-hidden="true">
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-label="Send Push Notification">
+    <div class="modal__head">
+      <div class="kicker lime">COMPOSE PUSH · ALL MEMBERS</div>
+      <button class="modal__close" data-close aria-label="Close">×</button>
+    </div>
+    <label class="modal__label">Title</label>
+    <input type="text" id="pushTitle" class="modal__input" maxlength="50" placeholder="Katy Trail run — Saturday 6AM" />
+    <label class="modal__label">Body <span class="modal__count"><span id="pushCount">0</span>/140</span></label>
+    <textarea id="pushBody" class="modal__textarea" maxlength="140" placeholder="Pulling up? Tap to RSVP. Weather looks perfect."></textarea>
+    <div class="modal__preview" id="pushPreview">
+      <div class="mp__app">RIU DALLAS <span class="mp__now">now</span></div>
+      <div class="mp__title" id="mpTitle">Katy Trail run — Saturday 6AM</div>
+      <div class="mp__body" id="mpBody">Pulling up? Tap to RSVP. Weather looks perfect.</div>
+    </div>
+    <div class="modal__actions">
+      <button class="btn btn--ghost magnetic" data-close>Cancel</button>
+      <button class="btn btn--lime magnetic" id="pushSend">Send to 317 members</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <!-- FOOTER -->
 <footer class="footer">
