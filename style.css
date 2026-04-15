@@ -920,6 +920,71 @@ body.cursor-on.cursor-magnet .cursor-ring{width:64px;height:64px;background:rgba
   background:var(--lime);box-shadow:0 0 6px rgba(191,255,0,0.5);
 }
 
+/* Sponsor section — old vs new comparison */
+.sponsor-compare{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:22px 0 14px;
+}
+.sc-col{
+  padding:18px 20px 20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.08);
+  background:#121212;
+}
+.sc-col--new{
+  border-color:rgba(191,255,0,0.3);
+  background:linear-gradient(135deg, rgba(191,255,0,0.05), rgba(18,18,18,0.95));
+}
+.sc-col__tag{
+  display:inline-block;
+  font-family:'Big Shoulders Display', Impact, sans-serif;
+  font-weight:900;font-size:10px;letter-spacing:0.22em;
+  color:rgba(255,255,255,0.55);
+  margin-bottom:8px;
+}
+.sc-col__tag.lime{
+  background:var(--lime);color:#0A0A0A;
+  padding:3px 9px;border-radius:4px;
+}
+.sc-col--old .sc-col__tag{
+  background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7);
+  padding:3px 9px;border-radius:4px;
+}
+.sc-col__head{
+  font-family:'Big Shoulders Display', Impact, sans-serif;
+  font-weight:900;font-size:18px;letter-spacing:0.04em;
+  color:#fff;text-transform:uppercase;margin-bottom:12px;
+}
+.sc-col--old .sc-col__head{color:rgba(255,255,255,0.7);}
+.sc-col__list{
+  list-style:none;padding:0;margin:0;
+  display:flex;flex-direction:column;gap:8px;
+}
+.sc-col__list li{
+  padding-left:18px;position:relative;
+  font-size:13.5px;line-height:1.45;color:rgba(255,255,255,0.85);
+}
+.sc-col__list li::before{
+  content:"";position:absolute;left:0;top:7px;
+  width:6px;height:6px;border-radius:50%;
+}
+.sc-col--old .sc-col__list li::before{background:rgba(255,255,255,0.3);}
+.sc-col--new .sc-col__list li::before{background:var(--lime);box-shadow:0 0 6px rgba(191,255,0,0.5);}
+.sponsor-takeaway{
+  text-align:center;
+  font-size:15px;line-height:1.55;
+  padding:14px 18px;
+  margin:0 0 8px;
+  border-top:1px solid rgba(191,255,0,0.12);
+  border-bottom:1px solid rgba(191,255,0,0.12);
+  color:rgba(255,255,255,0.95);
+}
+@media (max-width:700px){
+  .sponsor-compare{grid-template-columns:1fr;}
+}
+
 /* Bonus callout — single compact tile under the 3 main cards */
 .merch-bonus--single{
   margin-top:14px;
